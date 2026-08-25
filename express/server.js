@@ -12,5 +12,5 @@ const PORT = process.env.PORT || 8000
 app.listen(PORT, ()=>{
 
     // Show a message in the terminal when the server is running (10)
-    console.log(`Server is running on port ${PORT}`)
+    console.log(`Server is running on port ${PORT} (Browser URL: http://localhost:${PORT}/api/example)`);
 })
