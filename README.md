@@ -11,3 +11,5 @@ Each folder contains a separate package with:
 - 🔑 Environment/API key setup where required
 
 The goal is simple: instead of searching through old projects or documentation, I can quickly revisit a package and understand how to use it again.
+
+I keep this repository public, so if you find something useful here or want to learn from it, you're always welcome 😊
