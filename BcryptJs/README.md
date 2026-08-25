@@ -34,13 +34,13 @@ BcryptJs/
 Instead of storing a normal password like:
 
 ```text
-ashish
+Ashish
 ```
 
 We store a hashed version of it:
 
 ```text
-ashish
+Ashish
    ↓
 bcrypt.hash()
    ↓
@@ -53,20 +53,20 @@ This helps protect user passwords.
 
 ## 💻 How the Code Works
 
-### 1. Store a Normal Password
+### 1. Import BcryptJs
 
 ```js
-const PASSWORD = "ashish";
+import bcrypt from "bcryptjs";
 ```
 
-This is the original password that we want to hash.
+This imports `bcryptjs` so we can use its password hashing and comparison functions.
 
 ---
 
 ### 2. Hash the Password
 
 ```js
-const hashPassword = await bcrypt.hash(PASSWORD, 10);
+const hashPassword = await bcrypt.hash("Ashish", 10);
 ```
 
 `bcrypt.hash()` converts the normal password into a hashed password.
@@ -78,7 +78,7 @@ Salt rounds decide how much work bcrypt does while creating the hash.
 ```text
 Normal Password
       ↓
-bcrypt.hash(PASSWORD, 10)
+bcrypt.hash("Ashish", 10)
       ↓
 Hashed Password
 ```
@@ -92,11 +92,11 @@ If you run the program multiple times, the same password can generate different 
 For example:
 
 ```text
-ashish
+Ashish
    ↓
 Hash 1 → $2b$10$xxxxxxxx
 
-ashish
+Ashish
    ↓
 Hash 2 → $2b$10$yyyyyyyy
 ```
@@ -107,16 +107,16 @@ Even though the hashes look different, bcrypt can still verify the correct passw
 
 ## 🔑 Compare Passwords
 
-After creating the hash, the code compares the original password with the hashed password:
+The code compares the password with the generated hashed password:
 
 ```js
-const compare = await bcrypt.compare(PASSWORD, hashPassword);
+const compare = await bcrypt.compare("Ashish", hashPassword);
 ```
 
 `bcrypt.compare()` checks whether the normal password matches the hashed password.
 
 ```text
-Normal Password
+"Ashish"
       ↓
 bcrypt.compare()
       ↓
@@ -125,27 +125,51 @@ Compare with Hashed Password
 true / false
 ```
 
-If the password is correct:
+Since both passwords are the same in this example:
+
+```js
+bcrypt.hash("Ashish", 10);
+
+bcrypt.compare("Ashish", hashPassword);
+```
+
+The result will be:
 
 ```text
 true
 ```
 
-If the password is incorrect:
+---
+
+## ❌ What Happens with a Wrong Password?
+
+If we change the password used in `bcrypt.compare()`:
+
+```js
+const compare = await bcrypt.compare("WrongPassword", hashPassword);
+```
+
+The result will be:
 
 ```text
 false
 ```
 
+Because `"WrongPassword"` does not match the password that was originally hashed.
+
 ---
 
 ## 📤 Output
 
-The program prints:
+The program prints the hashed password:
 
 ```js
 console.log(hashPassword);
+```
 
+And the comparison result:
+
+```js
 console.log(compare);
 ```
 
@@ -172,23 +196,23 @@ node app.js
 
 ## 🧠 Simple Summary
 
-- `bcrypt.hash()` → Converts a normal password into a hashed password.
+- `bcrypt.hash("Ashish", 10)` → Converts `"Ashish"` into a hashed password.
 - `10` → Salt rounds used while creating the hash.
-- `bcrypt.compare()` → Checks if a normal password matches a hashed password.
-- Correct password → `true`
-- Incorrect password → `false`
+- `bcrypt.compare("Ashish", hashPassword)` → Checks whether the password matches the hash.
+- Same password → `true`
+- Different password → `false`
 
 ### Main Flow
 
 ```text
-Normal Password
-      ↓
+"Ashish"
+    ↓
 bcrypt.hash()
-      ↓
+    ↓
 Hashed Password
-      ↓
+    ↓
 bcrypt.compare()
-      ↓
+    ↓
 true / false
 ```
 
