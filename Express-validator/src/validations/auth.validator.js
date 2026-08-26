@@ -39,7 +39,7 @@ export const validateUser = [
     body('password')
         .trim()
         .isLength({min: 8, max: 12})
-        .withMessage('Password should 8 characters to 12 characters long.'),
+        .withMessage('Password should be between 8 and 12 characters long.'),
 
     // Check the final validation result and continue or return errors (15)
     authValidator
