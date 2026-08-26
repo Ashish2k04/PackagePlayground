@@ -26,7 +26,7 @@ export const validateUser = [
     // Check that username is between 4 and 12 characters (12)
     body('username')
         .isLength({min: 4, max: 12})
-        .withMessage('Username should 4 characters to 12 characters long.'),
+        .withMessage('Password should 8 characters to 12 characters long.'),
 
     // Remove extra spaces, convert email to lowercase, and check if it is a valid email (13)
     body('email')
