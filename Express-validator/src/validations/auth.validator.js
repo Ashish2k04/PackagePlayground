@@ -33,7 +33,7 @@ export const validateUser = [
         .trim()
         .toLowerCase()
         .isEmail()
-        .withMessage('Please enter a validate email.'),
+        .withMessage('Please enter a valid email.'),
 
     // Remove extra spaces and check that password is between 8 and 12 characters (14)
     body('password')
