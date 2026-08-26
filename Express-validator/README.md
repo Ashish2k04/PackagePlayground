@@ -162,7 +162,7 @@ Example response:
 {
     "error": [
         {
-            "msg": "Please enter a validate email."
+            "msg": "Please enter a valid email."
         }
     ]
 }
