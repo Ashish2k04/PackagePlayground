@@ -243,5 +243,3 @@ Which request headers are allowed?
 ```
 
 CORS is mainly configured on the **backend**, while the browser checks and enforces the cross-origin rules.
-
-.
