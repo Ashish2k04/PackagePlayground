@@ -495,3 +495,5 @@ Sends the actual email 📧
 ```
 
 > **The main idea of this project is to use Nodemailer with Gmail and Google OAuth2 to send emails securely from a Node.js application.**
+
+123
