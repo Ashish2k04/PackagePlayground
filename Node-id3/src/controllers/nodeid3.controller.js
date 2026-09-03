@@ -14,9 +14,7 @@ export async function uploadController(req,res) {
     })
 }
 
-import id3 from 'node-id3';
-
-export async function updateController(req, res) {
+export function updateController(req, res) {
     const song = req.file.buffer;
 
     const updatedSong = id3.update(
@@ -28,17 +26,17 @@ export async function updateController(req, res) {
         song
     );
 
+    const info = id3.read(updatedSong);
+
     return res.status(200).json({
         message: "Song metadata updated successfully.",
         info: {
-            title: updatedSong.title,
-            artist: updatedSong.artist,
-            album: updatedSong.album
+            title: info.title,
+            artist: info.artist,
+            album: info.album
         }
     });
 }
-
-import id3 from 'node-id3';
 
 export async function writeController(req, res) {
     const song = req.file.buffer;
@@ -51,25 +49,24 @@ export async function writeController(req, res) {
 
     const updatedSong = id3.write(tags, song);
 
+    const info = id3.read(updatedSong)
+
     return res.status(200).json({
         message: "Song metadata written successfully.",
         info: {
-            title: updatedSong.title,
-            artist: updatedSong.artist,
-            album: updatedSong.album
+            title: info.title,
+            artist: info.artist,
+            album: info.album
         }
     });
 }
 
-import id3 from 'node-id3';
-
 export async function removeTagsController(req, res) {
     const song = req.file.buffer;
 
-    const updatedSong = id3.removeTags(song);
+    id3.removeTags(song);
 
     return res.status(200).json({
-        message: "Song metadata removed successfully.",
-        info: updatedSong
+        message: "Song metadata removed successfully."
     });
 }
