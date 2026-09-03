@@ -4,6 +4,6 @@ import upload from "../middlewares/upload.middlware.js";
 
 const nodeid3Router = Router();
 
-nodeid3Router.post('/upload', upload.single('image'), uploadController);
+nodeid3Router.post('/upload', upload.single('song'), uploadController);
 
 export default nodeid3Router;
