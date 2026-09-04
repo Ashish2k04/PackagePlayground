@@ -4,6 +4,6 @@ import { registerController, getEmailController } from "../controllers/redis.con
 const redisRouter = Router();
 
 redisRouter.post('/register', registerController);
-redisRouter.post('/get-me', getEmailController);
+redisRouter.post('/get-email', getEmailController);
 
 export default redisRouter;
