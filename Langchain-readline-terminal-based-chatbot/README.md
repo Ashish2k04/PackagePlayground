@@ -9,7 +9,7 @@ This project takes user input from the terminal and sends it to an AI model usin
 Install the required packages:
 
 ```bash
-npm install dotenv @langchain/groq
+npm install dotenv @langchain/groq readline-sync
 ```
 
 The project also uses Node.js's built-in `readline/promises` module to take input from the terminal.
