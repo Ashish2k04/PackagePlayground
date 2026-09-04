@@ -39,4 +39,23 @@ async function getEmailController(req,res){
      })
 }
 
-export {registerController, getEmailController};
+async function deleteUserController(req, res) {
+    const {name} = req.body;
+
+    const deleted = await redis.del(name);
+
+    if(!deleted){
+        return res.status(404).json({
+            message: "User not found.",
+            success: false,
+            error: "No user exists with this name."
+        });
+    }
+
+    return res.status(200).json({
+        message: "User deleted successfully.",
+        success: true
+    });
+}
+
+export {registerController, getEmailController, deleteUserController};
