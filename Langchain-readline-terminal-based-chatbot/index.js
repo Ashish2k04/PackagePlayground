@@ -13,7 +13,7 @@ const model = new ChatGroq({
 });
 
 while (true) {
-    const userInput = await rl.question("What's in your mind? 😊: ");
+    const userInput = await rl.question("\x1b[32mWhat's in your mind? 😊:\x1b[0m ");
 
     if (userInput.toLowerCase() === "exit") {
         break;
@@ -21,7 +21,7 @@ while (true) {
 
     try {
         const response = await model.invoke(userInput);
-        console.log("AI CHATBOT 🤖: ",response.text);
+        console.log("\x1b[36mAI CHATBOT 🤖:\x1b[0m", response.text);
     } catch (error) {
         console.error("Error:", error.message);
     }
