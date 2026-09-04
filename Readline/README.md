@@ -170,7 +170,7 @@ Sends the user's message to the selected AI model through LangChain.
 ### 8. Display the Response
 
 ```js
-console.log(response.text);
+ console.log("AI CHATBOT 🤖: ",response.text);
 ```
 
 Prints the AI's response in the terminal.
