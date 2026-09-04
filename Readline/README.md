@@ -183,7 +183,7 @@ Prints the AI's response in the terminal.
 try {
     // AI request
 } catch (error) {
-    console.error("Mistral Error:", error.message);
+    console.error("Error:", error.message);
 }
 ```
 

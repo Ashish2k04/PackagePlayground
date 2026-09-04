@@ -23,7 +23,7 @@ while (true) {
         const response = await model.invoke(userInput);
         console.log(response.text);
     } catch (error) {
-        console.error("Mistral Error:", error.message);
+        console.error("Error:", error.message);
     }
 }
 
