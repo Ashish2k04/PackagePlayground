@@ -21,7 +21,7 @@ while (true) {
 
     try {
         const response = await model.invoke(userInput);
-        console.log(response.text);
+        console.log("AI CHATBOT 🤖: ",response.text);
     } catch (error) {
         console.error("Error:", error.message);
     }
