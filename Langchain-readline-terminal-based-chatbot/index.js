@@ -4,6 +4,7 @@ import readline from "readline/promises";
 import { HumanMessage, tool, createAgent } from 'langchain';
 import { sendEmail } from './mail.service.js';
 import * as z from 'zod';
+import { TavilySearch } from '@langchain/tavily';
 
 
 const emailTool = tool(sendEmail, {
@@ -17,7 +18,7 @@ const emailTool = tool(sendEmail, {
     })
 })
 
-const searchTool = 
+const searchTool = new TavilySearch({maxResults: 3});
 
 
 const rl = readline.createInterface({
@@ -32,7 +33,7 @@ const model = new ChatGroq({
 
 const agent = createAgent({
     model,
-    tools: [emailTool]
+    tools: [emailTool, searchTool]
 })
 
 let messages = []
@@ -48,9 +49,8 @@ while (true) {
 
     try {
         const response = await agent.invoke({messages});
-        console.log("\x1b[36mAI CHATBOT 🤖:\x1b[0m", response.text);
         messages.push(response.messages[response.messages.length - 1]);
-        console.log(response)
+        console.log("\x1b[36mAI CHATBOT 🤖:\x1b[0m", response.messages[response.messages.length - 1].content)
     } catch (error) {
         console.error("Error:", error.message);
     }
