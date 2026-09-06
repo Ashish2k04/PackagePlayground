@@ -17,6 +17,8 @@ const emailTool = tool(sendEmail, {
     })
 })
 
+const searchTool = 
+
 
 const rl = readline.createInterface({
     input: process.stdin,
