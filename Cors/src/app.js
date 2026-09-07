@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors({
 
     // Allow requests coming from this frontend origin (6)
-    origin: "http://localhost:5173/",
+    origin: "http://localhost:5173",
 
     // Allow credentials such as cookies to be sent with requests (7)
     credentials: true
