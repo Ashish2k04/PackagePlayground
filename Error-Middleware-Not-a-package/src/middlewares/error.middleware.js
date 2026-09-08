@@ -5,5 +5,9 @@ export function handleError(error, req, res, next){
         message: error.message
     };
 
-    i
+    if(process.env.NODE_ENVIRONMENT === "development"){
+        response.stack = error.stack;
+    };
+
+    return res.status(error.status).json(response);
 }
