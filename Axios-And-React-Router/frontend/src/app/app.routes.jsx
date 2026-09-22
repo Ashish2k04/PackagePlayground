@@ -1,8 +1,9 @@
 import {createBrowserRouter} from 'react-router';
+import Dashboard from '../features/notes/Dashboard';
 
 export const routes = createBrowserRouter([
     {
-      element: <h1>Welcome</h1>,
+      element: <Dashboard />,
       path: '/'
     }
 ])
