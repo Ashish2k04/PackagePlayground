@@ -24,7 +24,18 @@ async function createNotes(req,res,next) {
 async function deleteNotes(req,res,next){
     try{
         const {noteId} = req.params;
-        console.log(noteId);
+
+        const findNote = await noteModel.findById(noteId);
+
+        if(!findNote){
+            return res.status(404).json({
+                message: "Invalid not id.",
+                success: false,
+                error: "Invalid note id or note is no longer exists."
+            })
+        }
+
+        await noteModel.findByIdAndDelete(noteId);
 
         return res.status(200).json({
             message: "Note deleted.",
