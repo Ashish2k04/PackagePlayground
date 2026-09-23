@@ -1,6 +1,6 @@
 import noteModel from "../models/note.model.js";
 
-async function noteController(req,res,next) {
+async function createNotes(req,res,next) {
     try{
     const {title, description} = req.body;
 
@@ -21,4 +21,8 @@ async function noteController(req,res,next) {
    }
 };
 
-export {noteController};
+async function deleteNotes(req,res,next){
+
+}
+
+export {createNotes, deleteNotes};
