@@ -22,7 +22,8 @@ async function createNotes(req,res,next) {
 };
 
 async function deleteNotes(req,res,next){
-
+    const {noteId} = req.params;
+    console.log(noteid);
 }
 
 export {createNotes, deleteNotes};
