@@ -7,7 +7,7 @@ async function createNotes(req,res,next) {
     const note = await noteModel.create({title, description});
 
     return res.status(201).json({
-        message: "Note router is working.",
+        message: "Note created.",
         success: true,
         info: {
             title: note.title,
@@ -22,8 +22,20 @@ async function createNotes(req,res,next) {
 };
 
 async function deleteNotes(req,res,next){
-    const {noteId} = req.params;
-    console.log(noteid);
+    try{
+        const {noteId} = req.params;
+        console.log(noteId);
+
+        return res.status(200).json({
+            message: "Note deleted.",
+            success: true
+        })
+    }
+    catch(err){
+        err.status = 500;
+        next(err);
+    }
+    
 }
 
 export {createNotes, deleteNotes};
