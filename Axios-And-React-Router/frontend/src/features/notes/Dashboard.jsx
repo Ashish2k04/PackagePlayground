@@ -1,9 +1,11 @@
-import React from 'react'
-import Card from './components/Card'
+import Form from './components/Form';
+import Card from './components/Card';
+
 
 const Dashboard = () => {
   return (
     <div>
+      <Form />
       <Card />
     </div>
   )
