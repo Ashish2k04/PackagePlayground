@@ -7,6 +7,18 @@ export function useNotes(){
     const {note, setNote, loading, setLoading} = context;
 
     async function handleCreateNote({title, description}) {
-        setLoading(true);
+         setLoading(true)
+        try{
+            const data = await register(username, email, password)
+            setUser(data.info);
+            return data.info
+            }
+        catch(err){
+            throw err
+        }
+        finally{
+            setLoading(false)
+        }
     }
+
 }
