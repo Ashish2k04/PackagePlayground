@@ -36,4 +36,6 @@ export function useNotes(){
         }
     }
 
+    return({handleCreateNote, handleDeleteNote})
+
 }
