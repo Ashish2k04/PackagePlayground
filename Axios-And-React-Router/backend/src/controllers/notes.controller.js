@@ -9,10 +9,7 @@ async function createNotes(req,res,next) {
     return res.status(201).json({
         message: "Note created.",
         success: true,
-        info: {
-            title: note.title,
-            description: note.description
-        }
+        note
     })
    }
    catch(err){
