@@ -21,6 +21,21 @@ async function createNotes(req,res,next) {
    }
 };
 
+async function getNotes(req,res,next){
+    try{
+        const allNotes = await noteModel.find({title});
+
+        return res.status(200).json({
+            message: "All notes fetched.",
+            allNotes
+        })
+    }
+    catch(err){
+        err.status = 500;
+        next(err)
+    }
+}
+
 async function deleteNotes(req,res,next){
     try{
         const {noteId} = req.params;
