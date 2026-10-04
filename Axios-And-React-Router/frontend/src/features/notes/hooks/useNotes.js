@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { NoteContext } from "../note.context";
-import { createNote, deleteNote } from "../services/api.service";
+import { createNote, deleteNote, getNotes } from "../services/api.service";
 
 export function useNotes(){
     const context = useContext(NoteContext);
@@ -10,6 +10,21 @@ export function useNotes(){
          setLoading(true)
         try{
             const data = await createNote(title, description)
+            setNote(data.info);
+            return data.info
+            }
+        catch(err){
+            throw err
+        }
+        finally{
+            setLoading(false)
+        }
+    }
+
+    async function handleFetchNotes() {
+         setLoading(true)
+        try{
+            const data = await getNotes()
             setNote(data.info);
             return data.info
             }
@@ -36,6 +51,6 @@ export function useNotes(){
         }
     }
 
-    return({handleCreateNote, handleDeleteNote})
+    return({handleCreateNote, handleDeleteNote, handleFetchNotes})
 
 }
