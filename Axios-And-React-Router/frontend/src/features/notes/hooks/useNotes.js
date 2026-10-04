@@ -10,8 +10,8 @@ export function useNotes(){
          setLoading(true)
         try{
             const data = await createNote(title, description)
-            setNote(data.info);
-            return data.info
+            setNote(prev => [...prev, data.note]);
+            return data.note
             }
         catch(err){
             throw err
