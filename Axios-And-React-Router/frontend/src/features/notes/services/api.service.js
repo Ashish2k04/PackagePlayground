@@ -16,7 +16,7 @@ export async function getNotes(){
     return response.data
 }
 
-export async function deleteNote({noteId}){
+export async function deleteNote(noteId){
     const response = await api.delete(`/api/delete-note/${noteId}`);
     return response.data
 }
