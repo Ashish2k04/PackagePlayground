@@ -1,7 +1,7 @@
 import React from "react";
 import { Trash2 } from "lucide-react";
 
-const Card = ({onDeleteNote, title, description}) => {
+const Card = ({onDeleteNote, title, description, id}) => {
   return (
     <div className="w-full max-w-sm rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {/* Header */}
@@ -10,7 +10,7 @@ const Card = ({onDeleteNote, title, description}) => {
           {title}
         </h2>
 
-        <button
+        <button onClick={()=>{onDeleteNote(id)}}
           type="button"
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-gray-400 transition-all duration-200 hover:bg-red-50 hover:text-red-500"
           aria-label="Delete card"
