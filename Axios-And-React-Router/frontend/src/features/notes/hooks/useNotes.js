@@ -50,6 +50,6 @@ export function useNotes(){
         }
     }
 
-    return({handleCreateNote, handleDeleteNote, handleFetchNotes, note, setNote})
+    return({handleCreateNote, handleDeleteNote, handleFetchNotes, note, setNote, loading})
 
 }
