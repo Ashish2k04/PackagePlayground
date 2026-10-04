@@ -9,7 +9,7 @@ export function useNotes(){
     async function handleCreateNote(title, description) {
          setLoading(true)
         try{
-            const data = await createNote(username, email, password)
+            const data = await createNote(title, description)
             setNote(data.info);
             return data.info
             }
