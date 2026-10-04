@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div>
       <Form onCreateNote={handleCreateNote} />
-      <Card />
+      <Card onDeleteNote={handleDeleteNote}/>
     </div>
   )
 }
