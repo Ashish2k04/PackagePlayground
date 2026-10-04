@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const Form = ({onCreateNote}) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({
+    onCreateNote({
       title,
       description,
     });
