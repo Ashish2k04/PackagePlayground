@@ -64,4 +64,4 @@ async function deleteNotes(req,res,next){
     
 }
 
-export {createNotes, deleteNotes};
+export {createNotes, deleteNotes, getNotes};
