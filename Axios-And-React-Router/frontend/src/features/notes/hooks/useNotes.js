@@ -25,7 +25,6 @@ export function useNotes(){
          setLoading(true)
         try{
             const data = await getNotes()
-            setNote(data);
             return data
             }
         catch(err){
