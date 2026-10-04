@@ -39,7 +39,6 @@ export function useNotes(){
          setLoading(true)
         try{
             const data = await deleteNote(noteId)
-            setNote(data.info);
             return data.info
             }
         catch(err){
