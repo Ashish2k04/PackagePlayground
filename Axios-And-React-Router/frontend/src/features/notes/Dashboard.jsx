@@ -18,7 +18,7 @@ const Dashboard = () => {
     <div>
       <Form onCreateNote={handleCreateNote} />
       {note?.map((e)=>{
-        return <Card key={e._id} onDeleteNote={handleDeleteNote} title={e.title} description={e.description}/>
+        return <Card key={e._id} onDeleteNote={handleDeleteNote} title={e.title} description={e.description} id={e._id}/>
       })}
     </div>
   )
