@@ -23,7 +23,7 @@ async function createNotes(req,res,next) {
 
 async function getNotes(req,res,next){
     try{
-        const allNotes = await noteModel.find({title});
+        const allNotes = await noteModel.find();
 
         return res.status(200).json({
             message: "All notes fetched.",
