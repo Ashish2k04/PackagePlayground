@@ -10,7 +10,7 @@ export function useNotes(){
          setLoading(true)
         try{
             const data = await createNote(username, email, password)
-            setUser(data.info);
+            setNote(data.info);
             return data.info
             }
         catch(err){
@@ -25,7 +25,7 @@ export function useNotes(){
          setLoading(true)
         try{
             const data = await deleteNote(noteId)
-            setUser(data.info);
+            setNote(data.info);
             return data.info
             }
         catch(err){
