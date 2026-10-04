@@ -51,6 +51,6 @@ export function useNotes(){
         }
     }
 
-    return({handleCreateNote, handleDeleteNote, handleFetchNotes})
+    return({handleCreateNote, handleDeleteNote, handleFetchNotes, note, setNote})
 
 }
