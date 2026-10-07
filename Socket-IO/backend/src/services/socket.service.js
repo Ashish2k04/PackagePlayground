@@ -15,9 +15,11 @@ export const initiateServer = (httpServer) => {
     io.on('connect', (socket) => {
         console.log("A user is connected to the server " + socket.id)
 
-        socket.on("disconnect", ()=>{
-            console.log(`User disconnected ${socket.id}`)
-        })
+       socket.on("send-message", (message) => {
+         console.log("Message received:", message);
+
+         socket.emit("receive-message", message);
+       })
     })
 }
 
