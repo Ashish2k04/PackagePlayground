@@ -13,7 +13,7 @@ export const initiateServer = (httpServer) => {
     console.log("Socketio server is running...")
 
     io.on('connect', (socket) => {
-        console.log("A user is connected to the server" + socket.id)
+        console.log("A user is connected to the server " + socket.id)
 
         socket.on("disconnect", ()=>{
             console.log(`User disconnected ${socket.id}`)
