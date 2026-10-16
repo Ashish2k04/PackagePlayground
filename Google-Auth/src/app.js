@@ -22,7 +22,7 @@ passport.use(new GoogleStrategy({
 
 app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/"}), (req, res) => {
+app.get("/auth/google/callback", passport.authenticate("google", { session: false, failureRedirect: "/"}), (req, res) => {
   // Successful authentication, redirect or respond with user info
   console.log(req.user);
   res.json({ message: 'Authentication successful!', user: req.user });
