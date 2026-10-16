@@ -20,4 +20,6 @@ passport.use(new GoogleStrategy({
   return done(null, profile);
 }));
 
+app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+
 export default app;
