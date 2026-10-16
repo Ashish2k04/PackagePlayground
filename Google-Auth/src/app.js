@@ -24,6 +24,7 @@ app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "em
 
 app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/"}), (req, res) => {
   // Successful authentication, redirect or respond with user info
+  console.log(req.user);
   res.json({ message: 'Authentication successful!', user: req.user });
 }); 
 
