@@ -15,7 +15,7 @@ passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: "/auth/google/callback",
-}, (_, _, profile, done) => {
+}, (_, __, profile, done) => {
   // Here you can handle the user profile and save it to your database if needed
   return done(null, profile);
 }));
