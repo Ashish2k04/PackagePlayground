@@ -6,6 +6,7 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 
 const app = express();
 app.use(express.json());
+app.use(morgan('dev'));
 app.use(passport.initialize());
 
 app.get('/', (req, res) => {
