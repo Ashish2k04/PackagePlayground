@@ -1,10 +1,12 @@
 import "dotenv/config";
 import express from 'express';
 import passport from 'passport';
+import morgan from 'morgan';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 
 const app = express();
 app.use(express.json());
+app.use(morgan('dev'));
 app.use(passport.initialize());
 
 app.get('/', (req, res) => {
