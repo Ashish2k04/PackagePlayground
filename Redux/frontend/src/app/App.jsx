@@ -1,7 +1,10 @@
+import Dashboard from "../features/Dashboard"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Dashboard />
+    </div>
   )
 }
 
