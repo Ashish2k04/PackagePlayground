@@ -1,8 +1,14 @@
-import React from 'react'
+import {useDispatch, useSelector} from "react-redux"
 
 const Dashboard = () => {
+    const count = useSelector((state) => state.counter.value);
+
   return (
-    <div>Dashboard</div>
+    <div>
+        <h1>{count}</h1>
+        <button>+</button>
+        <button>-</button>
+    </div>
   )
 }
 
