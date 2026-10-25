@@ -8,6 +8,7 @@ const Dashboard = () => {
     const [num, setNum] = useState(0);
   return (
     <div>
+        <h3>State Management With Redux Toolkit</h3>
         <h1>{count}</h1>
         <button onClick={()=>{dispatch(increment())}}>Increase by 1</button>
         <button onClick={()=>{dispatch(decrement())}}>Decrease by 1</button><br />
