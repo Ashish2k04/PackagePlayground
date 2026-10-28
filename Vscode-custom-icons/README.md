@@ -69,8 +69,8 @@ If an `icons` folder already exists at that location, copy the SVG files into it
     "app.js": "../../icons/cubes-solid-full",
     "app.ts": "../../icons/cubes-solid-full",
 
-    "*.model.js": "../../icons/circle-nodes-solid-full",
-    "*.model.ts": "../../icons/circle-nodes-solid-full",
+    "*.model.js": "../../icons/mug-saucer-solid-full",
+    "*.model.ts": "../../icons/mug-saucer-solid-full",
 
     "*.hook.js": "../../icons/hook-icon",
     "*.hook.ts": "../../icons/hook-icon"
