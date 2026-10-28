@@ -106,6 +106,7 @@ If an `icons` folder already exists at that location, copy the SVG files into it
 | `app.js` | Cubes |
 | `*.model.js` | Mug Saucer |
 | `*.hook.js` | Hook |
+| `BRUNO` | Shield Dog & Shield Dog Open |
 
 ## Troubleshooting
 
