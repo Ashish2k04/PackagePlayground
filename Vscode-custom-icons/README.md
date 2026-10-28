@@ -38,43 +38,48 @@ If an `icons` folder already exists at that location, copy the SVG files into it
 4. Add the following configuration inside the outer JSON object.
 
 ```json
-"material-icon-theme.files.associations": {
-    "*.store.js": "../../icons/shop-solid-full",
-    "*.store.ts": "../../icons/shop-solid-full",
+ "material-icon-theme.files.associations": {
+        "*.store.js": "../../icons/shop-solid-full",
+        "*.store.ts": "../../icons/shop-solid-full",
 
-    "*.api.js": "../../icons/unplug",
-    "*.api.ts": "../../icons/unplug",
+        "*.api.js": "../../icons/unplug",
+        "*.api.ts": "../../icons/unplug",
 
-    "*.slice.js": "../../icons/pizza-slice-solid-full",
-    "*.slice.ts": "../../icons/pizza-slice-solid-full",
+        "*.slice.js": "../../icons/pizza-slice-solid-full",
+        "*.slice.ts": "../../icons/pizza-slice-solid-full",
 
-    "database.js": "database",
-    "database.ts": "database",
+        "database.js": "database",
+        "database.ts": "database",
 
-    "db.js": "database",
-    "db.ts": "database",
+        "db.js": "database",
+        "db.ts": "database",
 
-    "server.js": "../../icons/server-solid-full",
-    "server.ts": "../../icons/server-solid-full",
+        "server.js": "../../icons/server-solid-full",
+        "server.ts": "../../icons/server-solid-full",
 
-    "*.validator.js": "../../icons/validation-solid-full",
-    "*.validator.ts": "../../icons/validation-solid-full",
+        "*.validator.js": "../../icons/validation-solid-full",
+        "*.validator.ts": "../../icons/validation-solid-full",
 
-    "*.middleware.js": "../../icons/person-pointing-solid-full",
-    "*.middleware.ts": "../../icons/person-pointing-solid-full",
+        "*.middleware.js": "../../icons/person-pointing-solid-full",
+        "*.middleware.ts": "../../icons/person-pointing-solid-full",
 
-    "config.js": "../../icons/gears-solid-full",
-    "config.ts": "../../icons/gears-solid-full",
+        "config.js": "../../icons/gears-solid-full",
+        "config.ts": "../../icons/gears-solid-full",
 
-    "app.js": "../../icons/cubes-solid-full",
-    "app.ts": "../../icons/cubes-solid-full",
+        "app.js": "../../icons/cubes-solid-full",
+        "app.ts": "../../icons/cubes-solid-full",
 
-    "*.model.js": "../../icons/mug-saucer-solid-full",
-    "*.model.ts": "../../icons/mug-saucer-solid-full",
+        "*.model.js": "../../icons/mug-saucer-solid-full",
+        "*.model.ts": "../../icons/mug-saucer-solid-full",
 
-    "*.hook.js": "../../icons/hook-icon",
-    "*.hook.ts": "../../icons/hook-icon"
-}
+        "*.hook.js": "../../icons/hook-icon",
+        "*.hook.ts": "../../icons/hook-icon",
+
+        "*.yml": "../../icons/paw-solid-full",
+    },
+    "material-icon-theme.folders.associations": {
+        "BRUNO": "../../../../icons/shield-dog-solid-full"
+    }
 ```
 
 **If `settings.json` already has other settings:** place a comma after the previous property before adding this block. If `material-icon-theme.files.associations` already exists, merge these entries into the existing object rather than adding a duplicate key.
